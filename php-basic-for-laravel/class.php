@@ -1,21 +1,42 @@
 <?php
 
-class Product {
-// public string $name;
-// public int $price;
+class Product
+{
+    // public string $name;
+    // public int $price;
 
-// public function __construct(string $name, int $price){
-//     $this->name = $name;
-//     $this->price = $price;
-// }
-public function __construct(public string $name,public int $price){
+    // public function __construct(string $name, int $price){
+    //     $this->name = $name;
+    //     $this->price = $price;
+    // }
+    public function __construct(public string $name, public int $price) {}
 
+    public function isExpensive(): bool
+    {
+        return $this->price > 1000;
+    }
+    public function hasDiscount(): bool
+    {
+        return $this->price < 100;
+    }
+
+    public function getDescription(): string
+    {
+        return "{$this->name} costs {$this->price}€";
+    }
+
+    private function getLink(): string
+    {
+        return "https://example.com/products/";
+    }
 }
 
-public function isExpensive(): bool{
-    return $this->price > 1000;
-
-}
+class DigitalProduct
+{
+    public function getLink(): string
+    {
+        return 'app-link';
+    }
 }
 
 $product1 = new Product("Laptop", 1200);
