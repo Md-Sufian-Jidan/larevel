@@ -1,0 +1,19 @@
+{
+    "name": "user/composer-project",
+    "description": "Our new project",
+    "require": {
+        "guzzlehttp/guzzle": "^7.10",
+        "phpunit/phpunit": "^12.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "User\\ComposerProject\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Md-Sufian-Jidan",
+            "email": "jidanjiyaj03@gmail.com"
+        }
+    ]
+}

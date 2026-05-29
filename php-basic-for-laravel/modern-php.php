@@ -45,26 +45,43 @@
 
 // echo $result;
 
-class Address
-{
-    public function getCountry()
-    {
-        return 'Austria';
-    }
-}
-class Order
-{
-    public function getAddress()
-    {
-        return null; // Could be null for digital products
-    }
-}
-$order = new Order();
+// class Address
+// {
+//     public function getCountry()
+//     {
+//         return 'Austria';
+//     }
+// }
+// class Order
+// {
+//     public function getAddress()
+//     {
+//         return null; // Could be null for digital products
+//     }
+// }
+// $order = new Order();
 
-if($order->getAddress()){
-    $country = $order->getAddress()?->getCountry();
-} else {
-    $country = null;
-}
+// if($order->getAddress()){
+//     $country = $order->getAddress()?->getCountry();
+// } else {
+//     $country = null;
+// }
 
-var_dump($country); // Notice: Trying to get property 'getCountry' of non-object
+// var_dump($country); // Notice: Trying to get property 'getCountry' of non-object
+
+class Product
+{
+    public function __construct(
+        public string $name,
+        public ?float $price = null,
+        public ?float $beforePrice = null,
+        public ?float $afterPrice = null,
+    ) {}
+};
+
+// $product = new Product('Laptop', null, null, 100,);
+// $product = new Product(
+//     name: 'Laptop',
+//     afterPrice: 100,
+// );
+// var_dump($product);
